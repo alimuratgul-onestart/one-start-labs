@@ -1,6 +1,7 @@
 <template>
     <v-app>
-        <v-main>
+        <v-main :class="{'pl-0': !$vuetify.breakpoint.smAndDown}">
+            <div id="content-start"></div>
             <router-view></router-view>
         </v-main>
     </v-app>
@@ -13,5 +14,10 @@ export default {
     data: () => ({
         //
     }),
+    watch:{
+        $route(){
+            this.$vuetify.goTo('#content-start');
+        }
+    }
 };
 </script>

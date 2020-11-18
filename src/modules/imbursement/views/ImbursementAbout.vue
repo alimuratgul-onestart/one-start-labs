@@ -3,10 +3,12 @@
         <v-list-item-title class="display-1 font-weight-light text-center mb-5 primary--text">
             One Start Labs
         </v-list-item-title>
-        <p class="subheader">For the last 15 years, serial entrepreneur Noah Gross has been involved in e-commerce, advising companies
+        <p class="subheader">
+            For the last 15 years, serial entrepreneur Noah Gross has been involved in e-commerce, advising companies
             selling things on the internet. Health and beauty products, mylar balloons, garbage bags and cooking spices,
             to name a few (if you have a long time and several beers, he’d be happy to share a story or two with
-            you…).</p>
+            you…).
+        </p>
         <p class="subheader">Anyone who sells anything on the internet eventually lands on Amazon, But the numbers just did not add up.
             They never did. Inventory went missing, was returned, was lost, was damaged, and there didn’t seem to be a
             rhyme or reason to how Amazon did the accounting. Trying to make sense out of this led Noah to write some of

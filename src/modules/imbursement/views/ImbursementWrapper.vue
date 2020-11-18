@@ -1,42 +1,68 @@
 <template>
-    <div>
-        <v-app-bar flat color="white">
-            <v-container class="py-0 d-flex align-content-center align-center mw-80">
-                <v-app-bar-nav-icon class="hidden-md-and-up"/>
-                <div class="flex-grow-1">
-                    <v-toolbar-title>ONE START <span class="font-weight-light">Reimbursement</span></v-toolbar-title>
-                </div>
-                <v-spacer></v-spacer>
-                <div class="flex-grow-1 hidden-sm-and-down">
-                    <v-tabs right hide-slider height="32" active-class="primary--text">
-                        <template v-for="(m, mi) in menu">
-                            <v-tab
-                                v-if="!m.optional"
-                                :key="mi"
-                                v-text="m.text"
-                                :to="{name: m.path}"
-                                link
-                                exact
-                            />
-                        </template>
-                    </v-tabs>
-                </div>
-                <v-btn
-                    rounded
-                    color="primary"
-                    class="ml-3 hidden-sm-and-down"
-                    :to="{name: 'ImbursementContact'}"
-                >
-                    Contact
-                </v-btn>
-            </v-container>
-        </v-app-bar>
-        <transition
-            name="fade"
-            mode="out-in"
+    <div class="page-container">
+        <div class="content-container">
+            <v-app-bar app dense clipped-left color="white">
+                <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-md-and-up"/>
+                <v-container class="pa-0 d-flex align-content-center align-center mw-80">
+                    <div class="flex-grow-1">
+                        <v-toolbar-title>ONE START <span
+                            class="font-weight-light hidden-sm-and-down">Reimbursement</span>
+                        </v-toolbar-title>
+                    </div>
+                    <v-spacer></v-spacer>
+                    <div class="flex-grow-1 hidden-sm-and-down">
+                        <v-tabs right hide-slider height="32" active-class="primary--text">
+                            <template v-for="(m, mi) in menu">
+                                <v-tab
+                                    :key="mi"
+                                    v-text="m.text"
+                                    :to="{name: m.path}"
+                                    link
+                                    exact
+                                />
+                            </template>
+                        </v-tabs>
+                    </div>
+                </v-container>
+            </v-app-bar>
+            <transition
+                name="fade"
+                mode="out-in"
+            >
+                <router-view></router-view>
+            </transition>
+        </div>
+        <v-footer color="white">
+            <v-col
+                class="text-center py-8"
+                cols="12"
+            >
+                {{ new Date().getFullYear() }} — <strong>One Start Labs</strong>
+            </v-col>
+        </v-footer>
+        <v-navigation-drawer
+            v-model="drawer"
+            class="hidden-md-and-up"
+            :clipped="$vuetify.breakpoint.lgAndUp"
+            app
         >
-            <router-view></router-view>
-        </transition>
+            <v-list flat>
+                <template v-for="(m, mi) in menu">
+                    <v-list-item
+                        :key="mi"
+                        :to="{name:m.path}"
+                        color="_accent"
+                        active-class="primary--text"
+                        link
+                        exact
+                    >
+                        <v-list-item-title>
+                            {{ m.text }}
+                        </v-list-item-title>
+                    </v-list-item>
+                </template>
+            </v-list>
+        </v-navigation-drawer>
     </div>
 </template>
 
@@ -45,11 +71,12 @@ export default {
     name: "ImbursementWrapper",
     data() {
         return {
+            drawer: false,
             menu: [
                 {text: 'Home Page', path: 'ImbursementHome'},
+                {text: 'Pricing', path: 'ReimbursementPricing'},
                 {text: 'About Us', path: 'ImbursementAbout'},
-                {text: 'FAQ', path: 'ImbursementFaq'},
-                {text: 'Contact', path: 'ImbursementContact', optional: true},
+                {text: 'Contact', path: 'ImbursementContact'},
             ]
         }
     },
@@ -57,6 +84,15 @@ export default {
 </script>
 
 <style>
+.page-container {
+    width: 100%;
+    min-height: 100%;
+}
+
+.content-container {
+    min-height: calc(100vh - 100px);
+}
+
 @media only screen and (min-width: 960px) {
     .mw-80 {
         max-width: 80%;
