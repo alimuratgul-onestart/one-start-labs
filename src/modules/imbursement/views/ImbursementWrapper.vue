@@ -4,11 +4,22 @@
             <v-app-bar app dense clipped-left color="white">
                 <v-app-bar-nav-icon @click="drawer = !drawer" class="hidden-md-and-up"/>
                 <v-container class="pa-0 d-flex align-content-center align-center mw-80">
-                    <div class="flex-grow-1">
-                        <v-toolbar-title>ONE START <span
-                            class="font-weight-light hidden-sm-and-down">Reimbursement</span>
-                        </v-toolbar-title>
-                    </div>
+                    <router-link :to="{name: 'ImbursementHome'}" class="logo-link">
+                        <v-img
+                            src="@/assets/logo.png"
+                            width="32"
+                            height="32"
+                            max-width="32"
+                            max-height="32"
+                            class="mr-2"
+                        />
+                        <div class="flex-grow-1">
+                            <v-toolbar-title>
+                                ONE START <span
+                                class="font-weight-light hidden-sm-and-down">Reimbursement</span>
+                            </v-toolbar-title>
+                        </div>
+                    </router-link>
                     <v-spacer></v-spacer>
                     <div class="flex-grow-1 hidden-sm-and-down">
                         <v-tabs right hide-slider height="32" active-class="primary--text">
@@ -38,6 +49,9 @@
                 cols="12"
             >
                 {{ new Date().getFullYear() }} — <strong>One Start Labs</strong>
+                <p><a href="mailto:mailto:reimbursement@onestartlabs.com" class="grey--text font-weight-light text-decoration-none">
+                    reimbursement@onestartlabs.com
+                </a></p>
             </v-col>
         </v-footer>
         <v-navigation-drawer
@@ -76,7 +90,7 @@ export default {
                 {text: 'Home Page', path: 'ImbursementHome'},
                 {text: 'Pricing', path: 'ReimbursementPricing'},
                 {text: 'About Us', path: 'ImbursementAbout'},
-                {text: 'Contact', path: 'ImbursementContact'},
+                /*{text: 'Contact', path: 'ImbursementContact'},*/
             ]
         }
     },
@@ -91,6 +105,12 @@ export default {
 
 .content-container {
     min-height: calc(100vh - 100px);
+}
+
+.logo-link {
+    display: flex;
+    color: inherit !important;
+    text-decoration: none;
 }
 
 @media only screen and (min-width: 960px) {

@@ -36,11 +36,11 @@ const routes = [
                 name: 'ImbursementFaq',
                 component: ImbursementFaq
             },
-            {
+            /*{
                 path: 'contact',
                 name: 'ImbursementContact',
                 template: '<h1>ImbursementContact</h1>'
-            },
+            },*/
         ]
     },
 ]

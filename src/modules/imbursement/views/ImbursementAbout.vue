@@ -3,23 +3,20 @@
         <v-list-item-title class="display-1 font-weight-light text-center mb-5 primary--text">
             One Start Labs
         </v-list-item-title>
-        <p class="subheader">
-            For the last 15 years, serial entrepreneur Noah Gross has been involved in e-commerce, advising companies
-            selling things on the internet. Health and beauty products, mylar balloons, garbage bags and cooking spices,
-            to name a few (if you have a long time and several beers, he’d be happy to share a story or two with
-            you…).
+        <p class="subheader mb-10">
+            One Start Labs is a professional software development company based in Saint Louis, Missouri. We are a
+            company highly experienced in offering offshore software development and project management.
         </p>
-        <p class="subheader">Anyone who sells anything on the internet eventually lands on Amazon, But the numbers just did not add up.
-            They never did. Inventory went missing, was returned, was lost, was damaged, and there didn’t seem to be a
-            rhyme or reason to how Amazon did the accounting. Trying to make sense out of this led Noah to write some of
-            the original algorithms used in the RefundSniper software. He started getting aggressive about claiming for
-            discrepancies in FBA inventory, and it worked. A friend asked him to run his inventory through the
-            algorithm, and then another friend, and then someone’s brother-in-law, and, well, then RefundSniper was
-            born. </p>
-        <p class="subheader">
-            In the 2 years since the company’s inception, Noah has refined the algorithms, invested in technical
-            infrastructure, expanded to all Amazon platforms, and helped a whole lot of sellers make sense of their
-            inventory at Amazon-claiming back millions of dollars in mishandled inventory in the process.
+        <p class="subheader mb-10">Some of our services include Enterprise Resource Planning (ERP), e-Commerce consultation,
+            Amazon Booksellers' Control Panel (Bookz Pro - Coming Soon), and other customized software solutions for
+            small businesses in the United States. Our efforts focus on the concept, design, development and
+            re-engineering of web businesses.</p>
+        <p class="subheader mb-10">
+            We are specialized in understanding the needs of Amazon Sellers and the provision of the greatest software
+            solutions for them.
+        </p>
+        <p class="subheader mb-10">
+            Start finding simple solutions for complex problems.
         </p>
     </v-col>
 </template>
