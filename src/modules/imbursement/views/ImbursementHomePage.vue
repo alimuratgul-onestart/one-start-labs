@@ -20,19 +20,14 @@
                         AMAZON OWES YOU MONEY !
                     </h1>
 
-                    <v-btn href="mailto:mailto:reimbursement@onestartlabs.com" outlined rounded large color="white" class="mt-8">start
+                    <v-btn href="mailto:mailto:reimbursement@onestartlabs.com" outlined rounded large color="white"
+                           class="mt-8">start
                         now
                     </v-btn>
                 </v-col>
             </v-row>
         </v-parallax>
         <v-col cols="12" md="8" class="py-12 mx-auto mw-80">
-            <p class="text-center subheader">
-                OneStart can help you get your money back from Amazon by analyzing all of your data to efficiently
-                monitor inventory, lost and damaged goods, and returns, so that you receive all the refunds you deserve.
-                We open up cases on your behalf manually and follow up till you get the refunds. Unlike other services,
-                this is a non-automated software and 100% TOS compliant.
-            </p>
             <p class="text-center subheader">
                 We help you get reimbursements from Amazon by analyzing your FBA inventory and opening cases on your
                 behalf for your lost and damaged items. Unlike other services, ours is not an automated software. We
@@ -87,7 +82,8 @@
             </v-row>
         </v-container>
         <v-container class="mw-80 text-center">
-            <v-btn href="mailto:mailto:reimbursement@onestartlabs.com" outlined rounded x-large color="primary" class="my-8">start
+            <v-btn href="mailto:mailto:reimbursement@onestartlabs.com" outlined rounded x-large color="primary"
+                   class="my-8">start
                 now
             </v-btn>
         </v-container>
