@@ -22,13 +22,12 @@
                     </router-link>
                     <v-spacer></v-spacer>
                     <div class="flex-grow-1 hidden-sm-and-down">
-                        <v-tabs right hide-slider height="32" active-class="primary--text">
+                        <v-tabs v-model="menuModel" right hide-slider height="32" active-class="primary--text">
                             <template v-for="(m, mi) in menu">
                                 <v-tab
                                     :key="mi"
                                     v-text="m.text"
                                     :to="{name: m.path}"
-                                    link
                                     exact
                                 />
                             </template>
@@ -49,7 +48,8 @@
                 cols="12"
             >
                 {{ new Date().getFullYear() }} — <strong>One Start Labs</strong>
-                <p><a href="mailto:mailto:reimbursement@onestartlabs.com" class="grey--text font-weight-light text-decoration-none">
+                <p><a href="mailto:mailto:reimbursement@onestartlabs.com"
+                      class="grey--text font-weight-light text-decoration-none">
                     reimbursement@onestartlabs.com
                 </a></p>
             </v-col>
@@ -60,14 +60,13 @@
             :clipped="$vuetify.breakpoint.lgAndUp"
             app
         >
-            <v-list flat>
+            <v-list flat v-model="menuModel">
                 <template v-for="(m, mi) in menu">
                     <v-list-item
                         :key="mi"
                         :to="{name:m.path}"
                         color="_accent"
                         active-class="primary--text"
-                        link
                         exact
                     >
                         <v-list-item-title>
@@ -90,10 +89,15 @@ export default {
                 {text: 'Home Page', path: 'ImbursementHome'},
                 {text: 'Pricing', path: 'ReimbursementPricing'},
                 {text: 'About Us', path: 'ImbursementAbout'},
-                /*{text: 'Contact', path: 'ImbursementContact'},*/
-            ]
+            ],
+            menuModel: 0
         }
     },
+    watch: {
+        $route(value) {
+            this.menuModel = this.menu.findIndex(m => m.path === value.name);
+        }
+    }
 }
 </script>
 
