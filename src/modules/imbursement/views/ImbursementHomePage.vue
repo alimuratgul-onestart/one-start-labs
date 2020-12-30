@@ -107,15 +107,22 @@
                                         ref="contactName"
                                         v-model="form.contactName"
                                         label="Contact Name"
-                                        :rules="rules.requiredRule"
+                                        :rules="[rules.requiredRule]"
                                         dark
                                     />
                                 </v-col>
                                 <v-col cols="12" sm="12" class="py-0">
                                     <v-text-field
-                                        v-model="form.location"
-                                        label="Location"
-                                        :rules="rules.requiredRule"
+                                        v-model="form.state"
+                                        label="State"
+                                        dark
+                                    />
+                                </v-col>
+                                <v-col cols="12" sm="12" class="py-0">
+                                    <v-text-field
+                                        v-model="form.city"
+                                        label="City"
+                                        :rules="[rules.requiredRule]"
                                         dark
                                     />
                                 </v-col>
@@ -123,7 +130,7 @@
                                     <v-text-field
                                         v-model="form.companyName"
                                         label="Company (Amazon) Name"
-                                        :rules="rules.requiredRule"
+                                        :rules="[rules.requiredRule]"
                                         dark
                                     />
                                 </v-col>
@@ -173,9 +180,7 @@ export default {
     data() {
         return {
             rules: {
-                requiredRule: [
-                    v => !!v || 'This field is required'
-                ],
+                requiredRule: v => !!v || 'This field is required',
                 emailRule: value => {
                     const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                     return pattern.test(value) || 'Invalid e-mail.'
@@ -184,7 +189,8 @@ export default {
             formValid: true,
             form: {
                 contactName: '',
-                location: '',
+                state: '',
+                city: '',
                 companyName: '',
                 email: '',
             },
@@ -210,7 +216,7 @@ export default {
                     name: this.form.contactName,
                     email: this.form.email,
                     subject: "Reimbursement Mail",
-                    description: `${this.form.location} - ${this.form.companyName}`
+                    description: `${this.form.state || '-'} / ${this.form.city} - ${this.form.companyName}`
                 }
                 await api.post('misc/reimbursement/request', payload)
                     .then((res) => {
