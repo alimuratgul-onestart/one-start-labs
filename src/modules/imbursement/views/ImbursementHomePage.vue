@@ -88,7 +88,7 @@
             </v-container>
         </div>
         <div class="primary darken-2 mb-3">
-            <v-col cols="12" md="6" class="py-16 mx-auto mw-80">
+            <v-col cols="12" md="6" class="py-16 mx-auto">
                 <v-card flat color="transparent">
                     <v-list-item-title class="display-1 font-weight-light mt-4 text-center white--text">
                         Contact Us
