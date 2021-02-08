@@ -142,6 +142,13 @@
                                         dark
                                     />
                                 </v-col>
+                                <v-col cols="12" sm="12" class="py-0">
+                                    <v-text-field
+                                        v-model="form.couponCode"
+                                        label="Coupon Code (Optional)"
+                                        dark
+                                    />
+                                </v-col>
                                 <v-col cols="12" sm="12" class="text-center pt-6">
                                     <v-btn
                                         color="white"
@@ -193,6 +200,7 @@ export default {
                 city: '',
                 companyName: '',
                 email: '',
+                couponCode: '',
             },
             snackbar: {
                 model: '',
@@ -216,7 +224,7 @@ export default {
                     name: this.form.contactName,
                     email: this.form.email,
                     subject: "Reimbursement Mail",
-                    description: `${this.form.state || '-'} / ${this.form.city} - ${this.form.companyName}`
+                    description: `${this.form.state || '-'} / ${this.form.city} - ${this.form.companyName} - ${this.form.couponCode}`
                 }
                 await api.post('misc/reimbursement/request', payload)
                     .then((res) => {
