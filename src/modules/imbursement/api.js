@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create(({
-    baseURL: 'https://one-start-product-suit.ue.r.appspot.com/api/'
+    baseURL: 'https://prod-api.bookzpro.com/api/'
 }));
 
 export default api;
